@@ -1,0 +1,97 @@
+.nosotros-container {
+  display: flex;
+  padding: 80px 10%;
+  gap: 50px;
+  align-items: center;
+  min-height: 80vh;
+
+  .historia-texto {
+    flex: 1;
+
+    .subtitulo {
+      color: #d39840;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      color: #333;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+  }
+
+  .galeria-apicultura {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .imagen-marco {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      &:hover img {
+        transform: scale(1.05);
+      }
+    }
+
+    .principal {
+      height: 300px;
+    }
+
+    .imagenes-secundarias {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      height: 150px;
+    }
+  }
+}
+
+/* Ajuste para móviles */
+@media (max-width: 968px) {
+  .nosotros-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 5%;
+  }
+}
+
+.resaltado {
+  font-weight: 600; /* Un poco más gruesa */
+  color: #1b1725;   /* El color oscuro de tu navbar para contraste */
+  border-bottom: 2px solid #fbbf24; /* Una línea delgada color miel abajo */
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: rgba(251, 191, 36, 0.2); /* Se resalta suavemente al pasar el mouse */
+  }
+}
+
+.resaltado-enfasis {
+  background-color: #fbbf24; /* Fondo color miel directo */
+  color: #1b1725;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: bold;
+}

@@ -1,0 +1,174 @@
+.navbar {
+  background-color: #1b1725; // Asegúrate de que coincida con tu color oscuro
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  box-sizing: border-box;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    img { height: 45px; width: auto; }
+    span { color: #ffffff; font-weight: 700; font-size: 1.2rem; }
+  }
+}
+
+// Contenedor híbrido para escritorio
+.nav-container-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  margin-left: 40px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+
+  a {
+    color: #ebdcd0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+
+    &:hover, &.active {
+      color: #d99100; // Dorado miel
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  .phone {
+    color: #ebdcd0;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  .user {
+    color: #ffffff;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  .btn-contact {
+    background-color: #d99100;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover { background-color: #b87b00; }
+  }
+}
+
+// Botón Hamburguesa oculto en PC
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1010;
+
+  .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+}
+
+.navbar-spacer {
+  height: 70px; // Evita que el router-outlet se monte bajo la barra
+}
+
+// ARREGLO MÓVIL (Celulares)
+@media (max-width: 850px) { // Subí a 850px porque tienes demasiados elementos en la derecha
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .menu-toggle {
+    display: flex; // Aparece el botón de tres líneas
+
+    &.open {
+      .bar:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+      .bar:nth-child(2) { opacity: 0; }
+      .bar:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+    }
+  }
+
+  // Transformamos el contenedor en un panel lateral derecho
+  .nav-container-mobile {
+    position: fixed;
+    top: 70px;
+    right: -100%; // Escondido
+    width: 280px;
+    height: calc(100vh - 70px);
+    background-color: #1b1725; // Un tono más oscuro para contraste
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 40px 25px;
+    margin: 0;
+    gap: 35px;
+    transition: right 0.4s cubic-bezier(0.1, 0.9, 0.2, 1);
+    box-shadow: -5px 10px 20px rgba(0,0,0,0.3);
+    box-sizing: border-box;
+
+    &.active {
+      right: 0; // Entra a la pantalla
+    }
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 20px;
+    
+    a {
+      font-size: 1.15rem;
+      padding: 5px 0;
+      border-bottom: 1px solid rgba(235, 220, 208, 0.05);
+    }
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+    margin-top: auto; // Empuja las acciones al fondo del menú móvil
+    border-top: 1px solid rgba(235, 220, 208, 0.1);
+    padding-top: 20px;
+
+    .phone, .user {
+      text-align: center;
+      padding: 5px 0;
+    }
+
+    .btn-contact {
+      width: 100%;
+      padding: 12px;
+    }
+  }
+}

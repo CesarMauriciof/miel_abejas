@@ -1,0 +1,36 @@
+<section class="proceso-section">
+  <div class="proceso-container">
+    
+    <div class="proceso-header">
+      <span class="badge-origen">De la Finca a la Botella</span>
+      <h2>Nuestro Proceso Artesanal</h2>
+      <p>Una producción lenta, consciente y guiada por los ciclos de la naturaleza en nuestra finca.</p>
+    </div>
+
+    <div class="timeline">
+      
+      <div class="timeline-item" *ngFor="let paso of pasosProceso; let i = index" [class.inverted]="i % 2 !== 0">
+        
+        <div class="timeline-img-box">
+          <div class="img-placeholder">
+            <img [src]="paso.imagenUrl" [alt]="paso.titulo" onerror="this.src='https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=600&q=80'">
+            <div class="fase-number">{{ paso.fase }}</div>
+          </div>
+        </div>
+
+        <div class="timeline-badge-center">
+          <div class="badge-icon">{{ paso.icono }}</div>
+        </div>
+
+        <div class="timeline-content-box">
+          <span class="paso-sub">{{ paso.subtitulo }}</span>
+          <h3>{{ paso.titulo }}</h3>
+          <p>{{ paso.descripcion }}</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

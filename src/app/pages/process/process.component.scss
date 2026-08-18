@@ -1,0 +1,254 @@
+.proceso-section {
+  padding: 90px 20px;
+  background-color: #fbf8f3; // Tono crema rústico
+  overflow-hidden: hidden;
+}
+
+.proceso-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.proceso-header {
+  text-align: center;
+  margin-bottom: 80px;
+
+  .badge-origen {
+    color: #d99100;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    color: #2c1d11;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+  }
+
+  p {
+    color: #736051;
+    font-size: 1.1rem;
+    max-width: 550px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+}
+
+// Estructura de la Línea de Tiempo (Timeline)
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  // Línea vertical que atraviesa el centro (Solo en pantallas grandes)
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(to bottom, #ebdcd0 0%, #d99100 50%, #ebdcd0 100%);
+    transform: translateX(-50%);
+
+    @media (max-width: 768px) {
+      left: 20px; // Se mueve a la izquierda en celulares
+    }
+  }
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+
+  // Layout normal: Imagen Izquierda, Texto Derecha
+  .timeline-img-box {
+    width: 50%;
+    padding-right: 50px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .timeline-content-box {
+    width: 50%;
+    padding-left: 50px;
+    box-sizing: border-box;
+  }
+
+  // Layout Invertido (Paso par): Texto Izquierda, Imagen Derecha
+  &.inverted {
+    flex-direction: row-reverse;
+
+    .timeline-img-box {
+      padding-right: 0;
+      padding-left: 50px;
+      justify-content: flex-start;
+    }
+
+    .timeline-content-box {
+      padding-left: 0;
+      padding-right: 50px;
+      text-align: right;
+    }
+  }
+}
+
+// Nodo central con Emoji
+.timeline-badge-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  border: 2px solid #d99100;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(44, 29, 17, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+
+  .badge-icon {
+    font-size: 1.2rem;
+  }
+}
+
+// Caja de Imagen y Animación
+.timeline-img-box {
+  .img-placeholder {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    height: 240px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(44, 29, 17, 0.08);
+    background-color: #ebdcd0;
+    border: 1px solid #efe6dd;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+      filter: grayscale(15%);
+    }
+
+    .fase-number {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      background: rgba(44, 29, 17, 0.85);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 4px 10px;
+      border-radius: 4px;
+      backdrop-filter: blur(4px);
+    }
+  }
+}
+
+// Estilos de la Tarjeta de Texto
+.timeline-content-box {
+  transition: transform 0.3s ease;
+
+  .paso-sub {
+    color: #d99100;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+    color: #2c1d11;
+    margin: 0 0 12px 0;
+    font-weight: 700;
+  }
+
+  p {
+    color: #59473b;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+}
+
+// INTERACCIONES Y ANIMACIONES (Hover Effects)
+.timeline-item:hover {
+  .timeline-badge-center {
+    transform: translateX(-50%) scale(1.15);
+    background-color: #fdf5e6;
+  }
+
+  .timeline-img-box .img-placeholder img {
+    transform: scale(1.08);
+    filter: grayscale(0%);
+  }
+
+  .timeline-content-box {
+    transform: translateY(-2px);
+  }
+}
+
+// CONTROL RESPONSIVO (Celulares)
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 25px;
+  }
+
+  .timeline-item {
+    flex-direction: column !important;
+    align-items: flex-start;
+    gap: 20px;
+
+    .timeline-img-box, .timeline-content-box {
+      width: 100% !important;
+      padding-left: 65px !important;
+      padding-right: 0 !important;
+      text-align: left !important;
+    }
+
+    .timeline-img-box {
+      justify-content: flex-start;
+      
+      .img-placeholder {
+        height: 180px; // Un poco más pequeña en celular
+      }
+    }
+  }
+
+  .timeline-badge-center {
+    left: 25px;
+    transform: translateX(-50%);
+    width: 38px;
+    height: 38px;
+    top: 5px;
+
+    .badge-icon {
+      font-size: 1rem;
+    }
+  }
+
+  .timeline-item:hover {
+    .timeline-badge-center {
+      transform: translateX(-50%) scale(1.1);
+    }
+  }
+}

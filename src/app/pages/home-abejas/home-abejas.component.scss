@@ -1,0 +1,108 @@
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+    width: 100%;       /* Asegúrate que sea 100% y no 100vw */
+    max-width: 100%;   /* Límite estricto */
+    padding: 20px 50px; 
+    margin: 0;         /* Quita márgenes que puedan estar empujando */
+    
+    min-height: calc(100vh - 80px);
+    overflow: hidden;  /* Evita que los hijos se salgan */
+}
+
+/* Controlamos el lado del texto */
+.texto-hero {
+    flex: 1;                   /* Toma el espacio necesario */
+    min-width: 250px;
+}
+
+/* Controlamos el lado de la imagen */
+.Imagen_inicio {
+    flex: 1;                   /* También toma su parte */
+    display: flex;
+    justify-content: center;   /* Centra la imagen dentro de su propia caja */
+}
+
+.Imagen_inicio img {
+    width: 100%;               /* Que se adapte a su caja */
+    max-width: 450px;          /* Pero que no crezca más de esto */
+    height: auto;              /* Mantiene la proporción */
+    border-radius: 20px;       /* Bordes bonitos */
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.1); /* Sombra suave */
+}
+
+/* Estilos de fuente que ya tenías (mejorados) */
+.Nombre {
+    font-size: 48px;
+    color: #ff9900;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    margin-bottom: 10px;
+}
+
+.frase-principal, .frase-secundaria {
+    font-size: 55px;
+    color: #d39840;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    margin: 0; /* Quita espacios extra entre las dos líneas */
+    line-height: 1.2;     /* Separa un poquito las líneas de texto */
+    letter-spacing: 0.5px; /* Separa un pelín las letras */
+}
+
+/* Organiza para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column; /* Pone el texto arriba y la imagen abajo */
+        text-align: center;     /* Centra el texto */
+        padding: 20px;
+    }
+    
+    .Nombre {
+        font-size: 32px; /* Reduce un poco el tamaño en móviles */
+    }
+}
+
+.botones-container {
+    margin-top: 35px; /* Espacio entre el texto y los botones */
+    display: flex;
+    gap: 20px; /* Separación entre los dos botones */
+}
+
+.btn-principal {
+    background-color: #fbbf24; /* Color miel/amarillo */
+    color: #1b1725;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 50px; /* Bordes redondeados tipo píldora */
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transición suave para el efecto hover */
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+}
+
+.btn-principal:hover {
+    background-color: #f59e0b; /* Un poco más oscuro al pasar el mouse */
+    transform: translateY(-3px); /* Se eleva un poquito */
+    box-shadow: 0 6px 20px rgba(251, 191, 36, 0.5);
+}
+
+.btn-secundario {
+    background: transparent;
+    color: #d39840;
+    padding: 14px 28px;
+    border: 2px solid #d39840;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-secundario:hover {
+    background-color: #d39840;
+    color: white;
+    transform: translateY(-3px);
+}

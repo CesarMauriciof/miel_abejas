@@ -1,0 +1,43 @@
+<section class="registro-container">
+  <div class="registro-card">
+    
+    <!-- Lado Izquierdo: Información -->
+    <div class="registro-info">
+      <h2>Únete a la familia <span class="miel">Mielcaffeto</span></h2>
+      <p>Regístrate para recibir noticias de nuestras cosechas, consejos de apicultura y un <strong>10% de descuento</strong> en tu primera compra.</p>
+      <div class="abeja-decoracion">🐝</div>
+    </div>
+
+    <!-- Lado Derecho: Formulario Funcional -->
+    <form class="registro-form" [formGroup]="registroForm" (ngSubmit)="enviarDatos()">
+      
+      <div class="input-group">
+        <label>Nombre completo</label>
+        <input type="text" formControlName="nombre" placeholder="Ej. Alexander Daza">
+        <!-- Tip: podrías añadir un mensaje de error aquí si registroForm.get('nombre').invalid -->
+      </div>
+
+      <div class="input-group">
+        <label>Correo electrónico</label>
+        <input type="email" formControlName="email" placeholder="tu@email.com">
+        <!-- Tip: podrías añadir un mensaje de error aquí si registroForm.get('email').invalid -->
+      </div>
+
+      <div class="input-group">
+        <label>Número de WhatsApp</label>
+        <input type="tel" formControlName="whatsapp" placeholder="+57 300...">
+      </div>
+
+      <div class="terminos">
+        <input type="checkbox" formControlName="terminos" id="datos">
+        <label for="datos">Acepto el tratamiento de mis datos personales.</label>
+      </div>
+
+      <!-- El botón ahora sí responde al estado del formulario -->
+      <button type="submit" class="btn-enviar" [disabled]="registroForm.invalid">
+        Quiero mi descuento
+      </button>
+    </form>
+
+  </div>
+</section>

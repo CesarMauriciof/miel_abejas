@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box; /* Esto hace que el padding no "estire" los elementos hacia afuera */
+}
+
+html, body {
+  overflow-x: hidden; /* Esto es como un seguro: prohíbe el movimiento hacia los lados */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Un crema suave que no cansa la vista */
+  --primary-color: #dbd3b0; 
+  
+  /* El color oscuro para el texto o navbar */
+  --secondary-color: #1b1725; 
+  
+  /* Color para el texto principal sobre el fondo crema (Cuidado: blanco sobre crema no se lee) */
+  --text-color: #333333; 
+  
+  --hover-color: #ffcc33;
+  
+  /* Agreguemos el dorado de la miel para usarlo en todos lados */
+  --miel-color: #f59e0b;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary-color);
+  color: var(--text-color); 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e5e0c5; /* El color crema que estás usando */
+  margin: 0;
+}

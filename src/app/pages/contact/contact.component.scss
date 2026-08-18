@@ -1,0 +1,199 @@
+.contacto-section {
+  padding: 80px 20px;
+  background-color: #faf6f0; // Fondo crema cálido
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.contacto-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contacto-header {
+  text-align: center;
+  margin-bottom: 50px;
+
+  h2 {
+    font-size: 2.6rem;
+    color: #2c1d11; // Marrón oscuro
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: #6e5a4b;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+}
+
+.contacto-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; // Se vuelve una sola columna en móviles
+  }
+}
+
+// Estilo de las Tarjetas Informativas
+.contacto-info-channels {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid #efe6dd;
+  box-shadow: 0 4px 12px rgba(44, 29, 17, 0.03);
+  text-decoration: none; // Por si es un link
+  color: inherit;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  &.linkable-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(44, 29, 17, 0.08);
+    border-color: #d99100;
+  }
+
+  .card-icon {
+    background-color: #fdf5e6;
+    color: #d99100; // Dorado Miel
+    width: 55px;
+    height: 55px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  // Personalización del icono de Whatsapp en su tarjeta fija
+  &.whatsapp-card .card-icon {
+    background-color: #e8f9ee;
+    color: #25D366;
+  }
+
+  .card-text {
+    h3 {
+      margin: 0 0 4px 0;
+      font-size: 1.2rem;
+      color: #2c1d11;
+    }
+
+    p {
+      margin: 0 0 8px 0;
+      font-size: 0.9rem;
+      color: #7a685a;
+    }
+
+    .data-highlight {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #2c1d11;
+      display: block;
+    }
+  }
+}
+
+// Estilo de la Zona de Acción (Derecha)
+.contacto-action-zone {
+  .action-box {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 16px;
+    border: 1px solid #efe6dd;
+    box-shadow: 0 10px 30px rgba(44, 29, 17, 0.04);
+    text-align: center;
+
+    h3 {
+      font-size: 1.5rem;
+      color: #2c1d11;
+      margin: 0 0 15px 0;
+    }
+
+    p {
+      color: #6e5a4b;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+// Botón de WhatsApp Gigante
+.btn-whatsapp-large {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background-color: #25D366;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 16px 24px;
+  border-radius: 30px; // Estilo píldora muy moderno
+  font-size: 1.1rem;
+  font-weight: 700;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.25);
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    background-color: #1cbd54;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
+  }
+}
+
+// Divisor estético
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 30px 0;
+  color: #a89687;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  &::before, &::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ebdcd0;
+  }
+  
+  span {
+    padding: 0 15px;
+  }
+}
+
+// Botón de Red Social (Facebook)
+.btn-facebook-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #f7f1eb;
+  color: #4267B2; // Azul Facebook clásico
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  border: 1px solid #ebdcd0;
+
+  &:hover {
+    background-color: #4267B2;
+    color: #ffffff;
+    border-color: #4267B2;
+  }
+}

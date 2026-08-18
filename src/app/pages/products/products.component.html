@@ -1,0 +1,29 @@
+<section class="productos-section">
+  <div class="container">
+    <h2 class="section-title">Nuestros Productos</h2>
+    <p class="section-subtitle">Miel pura, artesanal y con un propósito consciente.</p>
+
+    <div class="productos-grid">
+      <div class="producto-card" *ngFor="let producto of productos">
+        <div class="producto-badge">Exclusivo</div>
+        <div class="producto-img-container">
+          <img [src]="producto.imagen" [alt]="producto.nombre" class="producto-img">
+        </div>
+        <div class="producto-info">
+          <h3>{{ producto.nombre }}</h3>
+          <span class="producto-sub">{{ producto.subtitulo }}</span>
+          <p class="producto-desc">{{ producto.descripcion }}</p>
+          <div class="producto-presentacion">
+            <i class="icon-info"></i> {{ producto.presentacion }}
+          </div>
+          <a [href]="generarLinkWhatsapp(producto.mensajeWs)" target="_blank" class="btn-whatsapp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+              <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.69-4.243c-.204-.101-1.207-.597-1.394-.664-.188-.067-.324-.1-.462.101-.137.2-.533.665-.654.803-.12.14-.24.155-.444.053-.204-.1-.862-.317-1.643-1.013-.607-.542-1.017-1.211-1.136-1.416-.12-.204-.013-.315.088-.415.092-.09.204-.24.306-.359.1-.12.133-.2.2-.335.066-.134.033-.252-.017-.353-.05-.101-.462-1.114-.634-1.528-.167-.402-.333-.347-.462-.353-.127-.006-.272-.006-.417-.006q-.216 0-.554.217c-.339.34-1.29 1.258-1.29 3.067 0 1.81 1.317 3.559 1.501 3.802.183.24 2.593 3.96 6.284 5.553.878.378 1.563.604 2.098.774.882.28 1.685.24 2.32.145.708-.106 2.18-.89 2.485-1.754.304-.863.304-1.603.213-1.754-.09-.15-.333-.252-.537-.353"/>
+            </svg>
+            Preguntar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

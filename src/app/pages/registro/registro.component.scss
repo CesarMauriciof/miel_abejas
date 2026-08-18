@@ -1,0 +1,106 @@
+.registro-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background-color: #e5e0c5; // El crema que ya usamos
+  min-height: 70vh;
+}
+
+.registro-card {
+  background: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 900px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.registro-info {
+  background-color: #1b1725; // El oscuro del navbar
+  color: white;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    .miel { color: #fbbf24; }
+  }
+
+  p {
+    line-height: 1.6;
+    opacity: 0.9;
+  }
+
+  .abeja-decoracion {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 3rem;
+    opacity: 0.2;
+  }
+}
+
+.registro-form {
+  padding: 40px;
+  background: #fff;
+
+  .input-group {
+    margin-bottom: 20px;
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #eee;
+      border-radius: 8px;
+      outline: none;
+      transition: border-color 0.3s;
+
+      &:focus {
+        border-color: #fbbf24;
+      }
+    }
+  }
+
+  .terminos {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    font-size: 0.85rem;
+    color: #666;
+  }
+
+  .btn-enviar {
+    width: 100%;
+    padding: 15px;
+    background-color: #fbbf24;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #1b1725;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+
+    &:hover {
+      background-color: #f59e0b;
+      transform: translateY(-2px);
+    }
+  }
+}
