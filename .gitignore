@@ -1,42 +1,26 @@
-# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+# Carpetas de salida y compilación
+/dist/
+/tmp/
+/out-tsc/
+/bazel-out/
 
-# Compiled output
-/dist
-/tmp
-/out-tsc
-/bazel-out
-
-# Node
-/node_modules
+# Dependencias (¡Crucial para que no pese gigabytes!)
+/node_modules/
 npm-debug.log
 yarn-error.log
 
-# IDEs and editors
+# Caché local de Angular
+/.angular/
+
+# Configuraciones del editor e IDEs
+.vscode/
 .idea/
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
-# Visual Studio Code
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history/*
-
-# Miscellaneous
-/.angular/cache
-.sass-cache/
-/connect.lock
-/coverage
-/libpeerconnection.log
-testem.log
-/typings
-
-# System files
+# Archivos del sistema
 .DS_Store
 Thumbs.db
