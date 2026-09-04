@@ -7,7 +7,7 @@
       <p>Una producción lenta, consciente y guiada por los ciclos de la naturaleza en nuestra finca.</p>
     </div>
 
-    <div class="timeline">
+    <div class="timeline" [@processAnimation]="pasosProceso.length">
       
       <div class="timeline-item" *ngFor="let paso of pasosProceso; let i = index" [class.inverted]="i % 2 !== 0">
         

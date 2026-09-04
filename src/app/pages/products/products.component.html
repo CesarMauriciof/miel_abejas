@@ -3,8 +3,14 @@
     <h2 class="section-title">Nuestros Productos</h2>
     <p class="section-subtitle">Miel pura, artesanal y con un propósito consciente.</p>
 
-    <div class="productos-grid">
+    <div class="productos-grid" [@listAnimation]="productos.length">
       <div class="producto-card" *ngFor="let producto of productos">
+        
+        <!-- MICROINTERACCIÓN: Gota de Miel Animada -->
+        <div class="honey-drip-container">
+          <div class="honey-drop"></div>
+        </div>
+
         <div class="producto-badge">Exclusivo</div>
         <div class="producto-img-container">
           <img [src]="producto.imagen" [alt]="producto.nombre" class="producto-img">

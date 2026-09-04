@@ -137,3 +137,55 @@
 .btn-whatsapp:hover {
   background-color: #1cbd54;
 }
+
+/* ==========================================
+   MICROINTERACCIÓN: GOTA DE MIEL FLUIDA
+   ========================================== */
+
+.honey-drip-container {
+  position: absolute;
+  top: 0;
+  left: 25px; /* Ubicada a la izquierda para no estorbar el badge de 'Exclusivo' */
+  width: 20px;
+  height: 40px;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.honey-drop {
+  width: 14px;
+  height: 14px;
+  background: linear-gradient(135deg, #f5af19 0%, #e65c00 100%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 3px 6px rgba(230, 92, 0, 0.35), 
+              inset -2px -2px 4px rgba(0, 0, 0, 0.2),
+              inset 2px 2px 4px rgba(255, 255, 255, 0.7);
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* Punto de brillo especular de la miel */
+  &::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 4px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+  }
+}
+
+/* Efecto al pasar el cursor sobre la tarjeta */
+.producto-card:hover .honey-drop {
+  height: 28px;
+  width: 12px;
+  top: 10px;
+  border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;
+  box-shadow: 0 8px 14px rgba(230, 92, 0, 0.45), 
+              inset -2px -2px 4px rgba(0, 0, 0, 0.25),
+              inset 2px 2px 4px rgba(255, 255, 255, 0.8);
+}
