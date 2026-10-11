@@ -1,6 +1,6 @@
 # 🐝 MielAbejas - Aplicación Web Angular
 
-> Proyecto de una aplicación web moderna e informativa sobre apicultura, desarrollada con Angular para presentar una marca de miel con enfoque comercial, visual atractivo y experiencia de usuario amigable.
+> Proyecto de una aplicación web moderna e informativa sobre apicultura, desarrollada con Angular para presentar una marca de miel con enfoque comercial, visual atractivo y experiencia de usuario [...]
 
 ![Project Status](https://img.shields.io/badge/Status-Portfolio--Ready-success?style=flat-square)
 ![Angular Version](https://img.shields.io/badge/Angular-17-red?style=flat-square&logo=angular)
@@ -9,7 +9,7 @@
 
 ## 📌 Descripción del proyecto
 
-MielAbejas es una landing page y sitio web comercial centrado en la marca de miel de la empresa. Su objetivo es presentar la historia, los productos, el proceso artesanal y facilitar la interacción con el usuario a través de secciones dedicadas a contacto y registro.
+MielAbejas es una landing page y sitio web comercial centrado en la marca de miel de la empresa. Su objetivo es presentar la historia, los productos, el proceso artesanal y facilitar la interacci[...]
 
 Este proyecto refleja mi capacidad para:
 
@@ -239,7 +239,7 @@ Si deseas colaborar, consultar detalles del proyecto o conversar sobre oportunid
 
 ## 📄 Licencia
 
-Este proyecto no especifica una licencia explícita en el repositorio actual, por lo que se recomienda revisarla antes de usarlo en un entorno profesional o de producción.
+Este proyecto está licenciado bajo la [Licencia MIT](LICENSE).
 
 ---
 
