@@ -241,6 +241,3 @@ Si deseas colaborar, consultar detalles del proyecto o conversar sobre oportunid
 
 Este proyecto está licenciado bajo la [Licencia MIT](LICENSE).
 
----
-
-Si quieres, también puedo dejar una versión aún más premium para portafolio con un estilo más visual, más técnico o más orientado a clientes.
