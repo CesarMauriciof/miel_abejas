@@ -12,6 +12,7 @@ Este proyecto es una landing page y sitio comercial con navegación por seccione
 - Proceso
 - Contacto
 - Registro
+<img width="1351" height="685" alt="{E09AB197-F588-4F30-A737-B740B73746B3}" src="https://github.com/user-attachments/assets/54425cd9-82a1-4aba-8a29-b5be34c537d5" />
 
 La aplicación está construida con Angular, usa rutas para la navegación, y se prepara para integraciones con Firebase y servicios web.
 
